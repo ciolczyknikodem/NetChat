@@ -9,10 +9,10 @@ public class Message implements Serializable {
     private String author;
     private LocalDateTime createdAt;
 
-    public Message(String content, String author, LocalDateTime createdAt) {
+    public Message(String content, String author) {
         this.content = content;
         this.author = author;
-        this.createdAt = createdAt;
+        this.createdAt = LocalDateTime.now();
     }
 
     public String getContent() {
