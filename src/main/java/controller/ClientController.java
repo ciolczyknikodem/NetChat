@@ -2,15 +2,15 @@ package controller;
 
 public class ClientController {
 
-    private final String ipAdres;
+    private final String ipAddress;
     private final int port;
 
-    public ClientController(String ipAdres, int port) {
-        this.ipAdres = ipAdres;
+    public ClientController(String ipAddress, int port) {
+        this.ipAddress = ipAddress;
         this.port = port;
     }
 
     public void start(){
-        
+
     }
 }
