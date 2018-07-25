@@ -4,19 +4,20 @@ import model.Client;
 import model.Message;
 
 import java.io.*;
-import java.net.Socket;
 import java.net.SocketException;
+import java.util.List;
 import java.util.Scanner;
 
 public class ChatSender {
 
-    private Socket socket;
     private ObjectOutputStream writer;
     private Client client;
+    private List<Client> userList;
 
-    public ChatSender(Socket socket, Client client) {
+    public ChatSender(ObjectOutputStream writer, Client client, List<Client> userList) {
         this.client = client;
-        this.socket = socket;
+        this.writer = writer;
+        this.userList = userList;
     }
 
     public void runSender() throws IOException {
