@@ -7,8 +7,8 @@ public class ClientApp {
     public static void main(String[] args) throws IOException {
         try{
             String ipAddress = "192.168.11.70"; //Adam IPAddress = 192.168.11.70
-                                        //Augustyn IPAddress = 192.168.10.114
-                                        //Nikodem IPAddress =
+                                                //Augustyn IPAddress = 192.168.10.114
+                                                //Nikodem IPAddress = 192.168.10.208
             int port = 9000;
             new ClientController(ipAddress, port).start();
         } catch (ArrayIndexOutOfBoundsException e) {
