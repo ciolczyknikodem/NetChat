@@ -1,5 +1,5 @@
-import controller.ClientController;
-import model.Server;
+import client.ClientController;
+import serverlogic.Server;
 
 import java.io.IOException;
 

@@ -1,4 +1,6 @@
-package model;
+package serverlogic;
+
+import model.Message;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -52,6 +54,7 @@ public class Server {
                     clients.forEach(objectOutputStream -> {
                         try {
                             objectOutputStream.writeObject(message); //Todo Write message to database
+                            System.out.println(message);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
