@@ -23,7 +23,7 @@ public class Conversation {
 
     public void start() throws IOException {
         connectToServer();
-        sender = new ChatSender(writer, new Client("adan", "kruk"), new ArrayList<>());
+        sender = new ChatSender(writer, author, new ArrayList<>());
         sender.runSender();
     }
 
