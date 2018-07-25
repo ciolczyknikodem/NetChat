@@ -33,10 +33,6 @@ public class Message implements Serializable {
 
     @Override
     public String toString() {
-        return "Message{" +
-                "content='" + content + '\'' +
-                ", author='" + author + '\'' +
-                ", createdAt=" + createdAt +
-                '}';
+        return createdAt + " " + author + " send: " + content;
     }
 }
