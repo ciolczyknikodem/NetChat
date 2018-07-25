@@ -6,6 +6,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -13,16 +14,18 @@ import java.util.List;
 
 public class Server {
     private final int port;
+    private final String address;
 
     private static final List<ObjectOutputStream> clients = new ArrayList<>(); //Todo Change this to Clients?
 
-    public Server(int port) {
+    public Server(int port, String address) {
         this.port = port;
+        this.address = address;
     }
 
     public void startListening() throws IOException {
 
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
+        try (ServerSocket serverSocket = new ServerSocket(port, 50, InetAddress.getByName(address))) {
 
             while (true) {
                 new IncomingRequestHandler(serverSocket.accept()).start();
